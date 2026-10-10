@@ -19,8 +19,9 @@ jobs:
         env:
           TAP_GITHUB_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
+          VERSION: ${{ github.event.inputs.version }}
         run: |
-          VERSION="${{ github.event.inputs.version }}"
+          VERSION="${VERSION}"
 
           git clone --depth 1 -b localApps \
             "https://x-access-token:${TAP_GITHUB_TOKEN}@github.com/${REPO_OWNER}/appstore-1panel.git" \
