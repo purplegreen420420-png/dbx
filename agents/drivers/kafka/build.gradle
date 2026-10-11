@@ -1,3 +1,9 @@
+repositories {
+    maven {
+        url 'https://maven.aikido.io/273a266b795e37e963390'
+    }
+}
+
 dependencies {
     implementation 'com.google.code.gson:gson:2.12.1'
     implementation 'org.apache.kafka:kafka-clients:3.9.1'
@@ -11,6 +17,9 @@ dependencies {
     }
     implementation 'io.dropwizard.metrics:metrics-core:4.1.12.1'
     runtimeOnly 'org.slf4j:slf4j-simple:1.7.36'
+    constraints {
+        implementation('commons-io:commons-io:2.11.0-aikido.2')
+    }
 }
 
 tasks.named('shadowJar') {
